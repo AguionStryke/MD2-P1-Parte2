@@ -33,7 +33,7 @@ int main(){
         return 1;
     }
 
-    printf("%d e n %d são coprimos entre si, o cálculo é possivel. Continuando...\n\n", G, n);
+    printf("%d e %d são coprimos entre si, o cálculo é possivel. Continuando...\n\n", G, n);
 
     P = 0;
 
@@ -52,6 +52,7 @@ int main(){
 
     //divisao de H por G (mult H por inv) em Zn para achar a
     printf("Multiplicando H (%d) pelo inverso (%d)...\n", H, inv);
+    printf("(Isso é o equivalente a dividir H por G em Zn!)");
 
     a = (H * inv) % n;
 
@@ -67,7 +68,7 @@ int main(){
         return 1;
     }
 
-    printf("%d e n %d são coprimos entre si, o cálculo é possivel. Continuando...\n\n", a, n1);
+    printf("%d e %d são coprimos entre si, o cálculo é possivel. Continuando...\n\n", a, n1);
 
     //ver se n1 e primo
     printf("Verificando se n1 (%d) é primo...\n", n1);
@@ -84,7 +85,7 @@ int main(){
         printf("Não é primo! Assim, teremos que usar o Teorema de Euler para o cálculo.\n");
         printf("Para isso, temos que calcular φ(n1) (Totiente de Euler) usando os fatores primos de n1.\n");
         x1 = euler(n1);
-        printf("φ(%d) = %d\n\n", n1, x1);
+        printf("x1 = φ(%d) = %d\n\n", n1, x1);
     }
 
     //usar o teorema da divisao para decompor o exponente x como
@@ -112,7 +113,7 @@ int main(){
 
     //combinar todos os resultados e imprimir o valor final da congruencia:
     // ((x2^q) * (a^r)) mod n1
-    printf("Por fim, calculamos ((x2^q) * (a^r)) mod n1, e chegamos al noso resultado final:\n");
+    printf("Por fim, calculamos ((x2^q) * (a^r)) mod n1, e assim chegamos ao nosso resultado final:\n");
     long long resultadoFinal = (e1 * e2) % n1;
     printf("O resultado final é: %lld!\n", resultadoFinal);
     
